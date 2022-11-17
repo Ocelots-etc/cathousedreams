@@ -1,0 +1,22 @@
+{
+  "dreams":[
+      {
+          "id": 1,
+          "day": "11/17/12",
+          "type": "good dream",
+          "story": "I dreamt I could fly"
+      }, {
+          "id": 2,
+          "day": "02/18/2022",
+          "type": "nightmare",
+          "story": "I had a nightmare about snakes"
+      }, {
+        "id": 3,
+        "day": "11/27/2022",
+        "type": "strange dream",
+        "story": "why were my hands hotdogs?"
+    }
+
+  ]
+
+}
