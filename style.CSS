@@ -1,0 +1,22 @@
+body, css {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(32, 85, 7);
+  text-align: center;
+}
+
+body * {
+  margin: 1em;
+  padding: 0;
+  list-style: none;
+}
+
+section {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+#dreamDetails {
+  display: -moz-popup;
+}
