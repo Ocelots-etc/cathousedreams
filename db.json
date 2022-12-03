@@ -11,10 +11,20 @@
           "type": "nightmare",
           "story": "I had a nightmare about snakes"
       }, {
-        "id": 3,
-        "day": "11/27/2022",
-        "type": "strange dream",
-        "story": "why were my hands hotdogs?"
-    }
+          "id": 3,
+          "day": "11/27/2022",
+          "type": "strange dream",
+          "story": "why were my hands hotdogs?"
+      }, {
+          "id": 4,
+          "day": "04/30/2022",
+          "type": "strange dream",
+          "story": "I recognize this side of town. When I turn the corner, I'll be by the water"
+      }, {
+          "id": 5,
+          "day": "02/21/2022",
+          "type": "strange dream",
+          "story": "It all makes sense now"
+      }
   ]
 }
