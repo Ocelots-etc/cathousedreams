@@ -17,15 +17,23 @@ const init = () => {
 //** const input = document.querySelector('input#searchByID') */
 //** console.log(input.value); */
     console.log(event.target.children[1].value);
-
+//** access user input from event object */
 
 //** basic fecth request to connect to json server */
     fetch(`http://localhost:8000/dreams/${event.target.children[1].value}`)
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-    //** access user input from event object */
+      const day = document.querySelector('section#dreamDetails h4')
+      const type = document.querySelector('section#dreamDetails h5')
+      const story = document.querySelector('section#dreamDetails p')
+    
+      day.innerText = data.day
+      type.innerText = data.type
+      story.innerText = data.story
+
     });
+
+
 
     });
 
