@@ -20,7 +20,7 @@ const init = () => {
 
 
 //** basic fecth request to connect to json server */
-    fetch('http://localhost:8000/dreams')
+    fetch(`http://localhost:8000/dreams/${event.target.children[1].value}`)
     .then(response => response.json())
     .then(data => {
       console.log(data);
