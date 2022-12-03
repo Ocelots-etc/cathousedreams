@@ -14,10 +14,18 @@ const init = () => {
 //** the best path for accessing the children property's HTML collection */
 //** to display in the console all of the nested elements of the */
 //** of the event.target element */
+//** const input = document.querySelector('input#searchByID') */
+//** console.log(input.value); */
     console.log(event.target.children[1].value);
 
+
+//** basic fecth request to connect to json server */
+    fetch('http://localhost:8000/dreams')
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
     //** access user input from event object */
-    
+    });
 
     });
 
