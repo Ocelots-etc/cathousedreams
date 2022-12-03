@@ -23,20 +23,17 @@ const init = () => {
     fetch(`http://localhost:8000/dreams/${event.target.children[1].value}`)
     .then(response => response.json())
     .then(data => {
+//** input my data in place of default values by creating elements to store */
       const day = document.querySelector('section#dreamDetails h4')
       const type = document.querySelector('section#dreamDetails h5')
       const story = document.querySelector('section#dreamDetails p')
-    
+//** setting the values of the innerText to match the values of data */
       day.innerText = data.day
       type.innerText = data.type
       story.innerText = data.story
 
     });
-
-
-
     });
-
 };
 //** add event listener */
 document.addEventListener('DOMContentLoaded', init);
