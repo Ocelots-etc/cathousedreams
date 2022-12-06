@@ -20,11 +20,14 @@ const init = () => {
 //     body: JSON.stringify(entry)
 //   })
 //     .then((response) => response.json())
-//     .then((newEntry) => renderEntry(newEntry))
-
+//     .then((newEntry) => {
+//       renderEntry(newEntry)}
+      
+//     )
 //     console.log(newEntry)
 
 // }
+
 
 
 
