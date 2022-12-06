@@ -33,7 +33,8 @@ function renderEntry({day, type, story}) {
   const dayH3Tag = document.createElement("h3")
   dayH3Tag.innerText = day
 
-
+  const typeH3Tag = document.createElement("p")
+  typeH3Tag.innerText = type
 
   const entryCard1 = document.createElement("div1")
 
@@ -41,6 +42,11 @@ function renderEntry({day, type, story}) {
   entryContainer.append(entryCard1)
   entryCard1.innerText = day
 
+  const entryCard2 = document.createElement("div2")
+  entryCard2.append(typeH3Tag)
+  entryContainer.append(entryCard2)
+  entryCard2.innerText = type
+  
 }
 
 //** add event listener */
