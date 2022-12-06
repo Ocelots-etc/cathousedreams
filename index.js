@@ -7,8 +7,6 @@ const init = () => {
     .then(response => response.json())
     .then(data => {
 
-      console.log(data)
-
       data.forEach(entry => renderEntry(entry)) 
 
     });
@@ -36,6 +34,9 @@ function renderEntry({day, type, story}) {
   const typeH3Tag = document.createElement("p")
   typeH3Tag.innerText = type
 
+  const storyH3Tag = document.createElement("p")
+  typeH3Tag.innerText = story
+
   const entryCard1 = document.createElement("div1")
 
   entryCard1.append(dayH3Tag)
@@ -43,10 +44,17 @@ function renderEntry({day, type, story}) {
   entryCard1.innerText = day
 
   const entryCard2 = document.createElement("div2")
+
   entryCard2.append(typeH3Tag)
   entryContainer.append(entryCard2)
   entryCard2.innerText = type
-  
+
+  const entryCard3 = document.createElement("div3")
+
+  entryCard3.append(storyH3Tag)
+  entryContainer.append(entryCard3)
+  entryCard3.innerText = story
+
 }
 
 //** add event listener */
