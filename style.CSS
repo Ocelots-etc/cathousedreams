@@ -12,8 +12,8 @@ body * {
 }
 
 section {
-  display: flex;
-  flex-flow: row;
+  /* display: flex; */
+  /* flex-flow: row; */
   justify-content: space-around;
 }
 
