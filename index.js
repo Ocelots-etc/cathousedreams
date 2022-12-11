@@ -9,26 +9,34 @@ const init = () => {
 
       data.forEach(entry => renderEntry(entry)) 
 
+      // console.log(data)
+      // console.log(data.forEach(newEntry => postEntry(newEntry)))
+
     });
 };
 
-//   function postEntry(entry) {
-  
-//   fetch(`http://localhost:8000/dreams`, {
-//     method: 'POST',
-//     headers:{'Content-Type': 'application/json'},
-//     body: JSON.stringify(entry)
-//   })
-//     .then((response) => response.json())
-//     .then((newEntry) => {
-//       renderEntry(newEntry)}
-      
-//     )
-//     console.log(newEntry)
+  function postEntry(newEntry) {
 
-// }
+    const dreamForm = document.querySelector('form')
+    console.log(newEntry)
+    // console.log(entry.day)
 
-
+    dreamForm.addEventListener('sumbit', (e) => {
+      e.preventDefault();
+      // console.log(entry)
+      const userDream = document.querySelector('input#enterDreamDate')
+      // console.log(userDream)
+       fetch(`http://localhost:8000/dreams`, {
+        method: 'POST',
+        headers:{'Content-Type': 'application/json'},
+        body: JSON.stringify(newEntry)
+      })
+        .then((response) => response.json())
+        .then((newEntry) => renderEntry(newEntry)
+        )
+      console.log(newEntry)
+    })
+  };
 
 
 function renderEntry({day, type, story}) {
