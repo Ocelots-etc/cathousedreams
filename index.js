@@ -18,10 +18,10 @@ const init = () => {
   function postEntry(newEntry) {
 
     const dreamForm = document.querySelector('form')
-    console.log(newEntry)
+    // console.log(newEntry)
     // console.log(entry.day)
 
-    dreamForm.addEventListener('sumbit', (e) => {
+    dreamForm.addEventListener('submit', (e) => {
       e.preventDefault();
       // console.log(entry)
       const userDream = document.querySelector('input#enterDreamDate')
@@ -32,11 +32,11 @@ const init = () => {
         body: JSON.stringify(newEntry)
       })
         .then((response) => response.json())
-        .then((newEntry) => renderEntry(newEntry)
-        )
-      console.log(newEntry)
+        .then((newEntry) => renderEntry(newEntry))
+        console.log(newEntry)
+      
     })
-  };
+};
 
 
 function renderEntry({day, type, story}) {
