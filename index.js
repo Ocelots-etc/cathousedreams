@@ -9,35 +9,19 @@ const init = () => {
 
       data.forEach(entry => renderEntry(entry)) 
 
-      // console.log(data)
-      // console.log(data.forEach(newEntry => postEntry(newEntry)))
-
     });
 };
 
-  function postEntry(newEntry) {
+  function postEntry(userEntry) {
 
-    const dreamForm = document.querySelector('form')
-    // console.log(newEntry)
-    // console.log(entry.day)
-
-    dreamForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // console.log(entry)
-      const userDream = document.querySelector('input#enterDreamDate')
-      // console.log(userDream)
        fetch(`http://localhost:8000/dreams`, {
         method: 'POST',
         headers:{'Content-Type': 'application/json'},
-        body: JSON.stringify(newEntry)
+        body: JSON.stringify(userEntry)
       })
         .then((response) => response.json())
         .then((newEntry) => renderEntry(newEntry))
-        console.log(newEntry)
-      
-    })
 };
-
 
 function renderEntry({day, type, story}) {
 
@@ -72,3 +56,24 @@ function renderEntry({day, type, story}) {
 
 //** add event listener */
 document.addEventListener('DOMContentLoaded', init);
+
+const journalForm = document.querySelector(".journal-form")
+
+journalForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+    const userDate = document.querySelector("#enterDreamDate").value
+
+    const userType = document.querySelector("#enterDreamType").value
+
+    const userStory = document.querySelector("#enterDreamStory").value
+
+    const formObject = {
+      day: userDate, 
+      type: userType, 
+      story: userStory
+    }
+    postEntry(formObject)
+
+    //mouseover or mousehover for entry divs is final event listener goal
+});
