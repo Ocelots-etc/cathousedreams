@@ -20,3 +20,7 @@ section {
 #dreamDetails {
   display: -moz-popup;
 }
+
+#dayDiv:hover{
+  background-color: #205081;
+}

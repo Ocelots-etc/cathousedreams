@@ -23,17 +23,12 @@ const init = () => {
         .then((newEntry) => renderEntry(newEntry))
 };
 
+
 function renderEntry({day, type, story}) {
 
   const dayH3Tag = document.createElement("h3")
-  // dayH3Tag.setAttribute("id", "dayDiv")
   dayH3Tag.innerText = day
 
-  const typeH3Tag = document.createElement("p")
-  typeH3Tag.innerText = type
-
-  const storyH3Tag = document.createElement("p")
-  typeH3Tag.innerText = story
 
   const entryCard1 = document.createElement("div1")
   entryCard1.setAttribute("id", "dayDiv")
@@ -43,44 +38,38 @@ function renderEntry({day, type, story}) {
   entryCard1.innerText = day
 
   const displayedEntry = document.getElementById("dayDiv")
-  // console.log(displayedEntry)
+  console.log(displayedEntry)
 
-  displayedEntry.addEventListener('mouseover', (event) => {
-    event.NONE
+  displayedEntry.addEventListener('mouseover', eventOver)
+  
+  displayedEntry.addEventListener('mouseout', eventOut)
+  
+  let entryCard2 = null
+  let typeH3Tag = null
+  
+    function eventOver() {
+      document.getElementById("dayDiv").style.color = "green"
+    typeH3Tag = document.createElement("p")
+    typeH3Tag.innerText = type
 
-    const typeH3Tag = document.createElement("p")
-      typeH3Tag.innerText = type
 
-      const storyH3Tag = document.createElement("p")
-      typeH3Tag.innerText = story
-    
-      const entryCard2 = document.createElement("div2")
+      entryCard2 = document.createElement("div2")
+      entryCard2.setAttribute("id", "typeDiv")
 
       entryCard2.append(typeH3Tag)
       entryContainer.append(entryCard2)
       entryCard2.innerText = type
-    
-      const entryCard3 = document.createElement("div3")
-    
-      entryCard3.append(storyH3Tag)
-      entryContainer.append(entryCard3)
-      entryCard3.innerText = story
-    
-  })
-  
-  // const entryCard2 = document.createElement("div2")
+    }
 
-  // entryCard2.append(typeH3Tag)
-  // entryContainer.append(entryCard2)
-  // entryCard2.innerText = type
+    function eventOut() {
 
-  // const entryCard3 = document.createElement("div3")
+      entryCard2.remove()
 
-  // entryCard3.append(storyH3Tag)
-  // entryContainer.append(entryCard3)
-  // entryCard3.innerText = story
+    }
 
-}
+  }
+
+
 
 /** add event listener */
 document.addEventListener('DOMContentLoaded', init);
@@ -105,34 +94,3 @@ journalForm.addEventListener('submit', (e) => {
     postEntry(formObject)
 
 });
-
-// const displayedEntry = document.getElementById("dayDiv")
-
-// console.log(displayedEntry)
-//  //mouseover or mousehover for entry divs is final event listener goal
-//     displayedEntry.addEventListener('mouseover', (event) => {
-//     console.log(event)
-
-    //   const typeH3Tag = document.createElement("p")
-    //   typeH3Tag.innerText = type
-    
-    //   const storyH3Tag = document.createElement("p")
-    //   typeH3Tag.innerText = story
-    
-    //   const entryCard2 = document.createElement("div2")
-
-    //   entryCard2.append(typeH3Tag)
-    //   entryContainer.append(entryCard2)
-    //   entryCard2.innerText = type
-    
-    //   const entryCard3 = document.createElement("div3")
-    
-    //   entryCard3.append(storyH3Tag)
-    //   entryContainer.append(entryCard3)
-    //   entryCard3.innerText = story
-    
-    // });
-
-// onmouseover = (event) => {
-
-// };
