@@ -35,6 +35,30 @@
       "type": "bad dream",
       "story": "the sole of my shoe lifted off of my shoe",
       "id": 6
+    },
+    {
+      "day": "12/17/22",
+      "type": "good",
+      "story": "I got to see Casey",
+      "id": 7
+    },
+    {
+      "day": "12/24/2022",
+      "type": "good",
+      "story": "santa came early",
+      "id": 8
+    },
+    {
+      "day": "01/01/2023",
+      "type": "bad",
+      "story": "the world ended",
+      "id": 9
+    },
+    {
+      "day": "01/01/2023",
+      "type": "bad",
+      "story": "the world ended",
+      "id": 10
     }
   ]
 }

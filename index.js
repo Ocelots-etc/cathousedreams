@@ -26,6 +26,7 @@ const init = () => {
 function renderEntry({day, type, story}) {
 
   const dayH3Tag = document.createElement("h3")
+  // dayH3Tag.setAttribute("id", "dayDiv")
   dayH3Tag.innerText = day
 
   const typeH3Tag = document.createElement("p")
@@ -35,26 +36,53 @@ function renderEntry({day, type, story}) {
   typeH3Tag.innerText = story
 
   const entryCard1 = document.createElement("div1")
+  entryCard1.setAttribute("id", "dayDiv")
 
   entryCard1.append(dayH3Tag)
   entryContainer.append(entryCard1)
   entryCard1.innerText = day
 
-  const entryCard2 = document.createElement("div2")
+  const displayedEntry = document.getElementById("dayDiv")
+  // console.log(displayedEntry)
 
-  entryCard2.append(typeH3Tag)
-  entryContainer.append(entryCard2)
-  entryCard2.innerText = type
+  displayedEntry.addEventListener('mouseover', (event) => {
+    event.NONE
 
-  const entryCard3 = document.createElement("div3")
+    const typeH3Tag = document.createElement("p")
+      typeH3Tag.innerText = type
 
-  entryCard3.append(storyH3Tag)
-  entryContainer.append(entryCard3)
-  entryCard3.innerText = story
+      const storyH3Tag = document.createElement("p")
+      typeH3Tag.innerText = story
+    
+      const entryCard2 = document.createElement("div2")
+
+      entryCard2.append(typeH3Tag)
+      entryContainer.append(entryCard2)
+      entryCard2.innerText = type
+    
+      const entryCard3 = document.createElement("div3")
+    
+      entryCard3.append(storyH3Tag)
+      entryContainer.append(entryCard3)
+      entryCard3.innerText = story
+    
+  })
+  
+  // const entryCard2 = document.createElement("div2")
+
+  // entryCard2.append(typeH3Tag)
+  // entryContainer.append(entryCard2)
+  // entryCard2.innerText = type
+
+  // const entryCard3 = document.createElement("div3")
+
+  // entryCard3.append(storyH3Tag)
+  // entryContainer.append(entryCard3)
+  // entryCard3.innerText = story
 
 }
 
-//** add event listener */
+/** add event listener */
 document.addEventListener('DOMContentLoaded', init);
 
 const journalForm = document.querySelector(".journal-form")
@@ -73,7 +101,38 @@ journalForm.addEventListener('submit', (e) => {
       type: userType, 
       story: userStory
     }
+
     postEntry(formObject)
 
-    //mouseover or mousehover for entry divs is final event listener goal
 });
+
+// const displayedEntry = document.getElementById("dayDiv")
+
+// console.log(displayedEntry)
+//  //mouseover or mousehover for entry divs is final event listener goal
+//     displayedEntry.addEventListener('mouseover', (event) => {
+//     console.log(event)
+
+    //   const typeH3Tag = document.createElement("p")
+    //   typeH3Tag.innerText = type
+    
+    //   const storyH3Tag = document.createElement("p")
+    //   typeH3Tag.innerText = story
+    
+    //   const entryCard2 = document.createElement("div2")
+
+    //   entryCard2.append(typeH3Tag)
+    //   entryContainer.append(entryCard2)
+    //   entryCard2.innerText = type
+    
+    //   const entryCard3 = document.createElement("div3")
+    
+    //   entryCard3.append(storyH3Tag)
+    //   entryContainer.append(entryCard3)
+    //   entryCard3.innerText = story
+    
+    // });
+
+// onmouseover = (event) => {
+
+// };
