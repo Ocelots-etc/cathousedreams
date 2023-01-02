@@ -1,5 +1,7 @@
 const entryContainer = document.querySelector(".entryContainer")
 
+const entryDetails = document.querySelector(".entryDetails")
+
 const init = () => {
 
 /** basic fetch request to connect to json server */
@@ -30,41 +32,35 @@ function renderEntry({day, type, story}) {
   dayH3Tag.innerText = day
 
 
-  const entryCard1 = document.createElement("div1")
+  const entryCard1 = document.createElement("div")
   entryCard1.setAttribute("id", "dayDiv")
 
   entryCard1.append(dayH3Tag)
   entryContainer.append(entryCard1)
   entryCard1.innerText = day
 
-  const displayedEntry = document.getElementById("dayDiv")
-  console.log(displayedEntry)
+  entryCard1.addEventListener('mouseover', eventOver)
 
-  displayedEntry.addEventListener('mouseover', eventOver)
-  
-  displayedEntry.addEventListener('mouseout', eventOut)
-  
+  entryCard1.addEventListener('mouseout', eventOut)
+
   let entryCard2 = null
-  let typeH3Tag = null
-  
+  let typePTag = null
+
     function eventOver() {
-      document.getElementById("dayDiv").style.color = "green"
-    typeH3Tag = document.createElement("p")
-    typeH3Tag.innerText = type
+      typePTag = document.createElement("p")
+      typePTag.innerText = `type of dream: ${type}`
 
-
-      entryCard2 = document.createElement("div2")
+      entryCard2 = document.createElement("div")
       entryCard2.setAttribute("id", "typeDiv")
 
-      entryCard2.append(typeH3Tag)
-      entryContainer.append(entryCard2)
-      entryCard2.innerText = type
+      entryCard1.append(typePTag, entryCard2)
+      entryCard2.innerText = `Dream story: ${story}`
     }
 
     function eventOut() {
 
       entryCard2.remove()
-
+      typePTag.remove()
     }
 
   }

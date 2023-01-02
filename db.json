@@ -71,6 +71,18 @@
       "type": "x",
       "story": "x",
       "id": 12
+    },
+    {
+      "day": "12/20/22",
+      "type": "good",
+      "story": "I completed my project",
+      "id": 13
+    },
+    {
+      "day": "12/22/2022",
+      "type": "good/bad",
+      "story": "a video game character, which was a plant type creature, escaped the video game. I had a child that both was and wasn't my child. Her kid furniture was about my room and someone came into my room and started to move or cover up the furniture and I didn't like that and tried to explain to them but they didn't seem to understand. A second type of creature had escaped. I couldn't help but think that the authorities weren't being completely honest about the creatures.",
+      "id": 14
     }
   ]
 }
