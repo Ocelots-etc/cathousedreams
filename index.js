@@ -25,7 +25,6 @@ const init = () => {
         .then((newEntry) => renderEntry(newEntry))
 };
 
-
 function renderEntry({day, type, story}) {
 
   const dayH3Tag = document.createElement("h3")
@@ -64,8 +63,6 @@ function renderEntry({day, type, story}) {
     }
 
   }
-
-
 
 /** add event listener */
 document.addEventListener('DOMContentLoaded', init);
